@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="form p-4 mx-auto col-md-6">
+
+    <%= form_for @email, url: {action: :create}, html: {id: 'email_form'}  do |f| %>
+      <% if @email.errors.any? %>
+        <div id = "error_explanation">
+          <div class = "Attention_alert_blog">
+            The form contains <%= pluralize(@email.errors.count, "error") %>.
+          </div>
+          <ol class="Attention_alert_blog">
+            <% @email.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ol>
+        </div>
+      <% end %>
+      <div class="form-group col-md-8">
+        <p class="text-center display-4 py-2 text-truncate">Email</p>
+
+      </div>
+      <div class="row">
+
+        </div>
+        <div class="form-group col-md-8">
+          <%= f.label 'Email', class: 'form-control form-attr-width'  %>
+          <%= f.email_field :email, class: 'form-control' , placeholder: 'Enter your email address here', required: true %>
+        </div>
+        <div class="form-group col-md-8">
+          <%= f.label :title, class: 'form-control form-attr-width'  %>
+          <%= f.text_field :title, class: 'form-control' , placeholder: 'Enter Email title here' %>
+        </div>
+        <div class="form-group col-md-8">
+          <%= f.label :description, class: 'form-control form-attr-width'  %>
+          <%= f.text_area :description, class: 'form-control' , placeholder: 'Enter Email description here', required: true, rows: 3 %>
+        </div>
+        <div class="form-group col-md-8">
+          <button type="cancel" class="btn btn-danger">Cancel</button>
+          <button type="submit" class="btn btn-success">Send Email</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

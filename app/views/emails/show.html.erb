@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <%= @email.title %>
+      <%= @email&.email%>
+      <%= @email.description %>
+      <%= link_to 'send a new email', new_email_path %>
+    </div>
+  </div>
+</div>

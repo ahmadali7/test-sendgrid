@@ -1,0 +1,5 @@
+development:
+ HOST_URL: 'localhost:3000'
+ SENDGRID_USERNAME: 'app170096610@heroku.com'
+ SENDGRID_PASSWORD: 'h5wxmbcm3698'
+ EMAIL_ADDRESS: 'test@testing.com'
